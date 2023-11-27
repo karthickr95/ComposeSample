@@ -5,6 +5,8 @@
     <string name="particle_screen_title">Particle Animation</string>
     <string name="small_animations_screen_title">Small Animations</string>
     <string name="smooth_line_graph_title">Smooth Line Graph</string>
+    <string name="gradient_along_path_animation_title">Gradient Along Path Animation</string>
+    <string name="bouncy_rope_title">Bouncy Rope</string>
 
     <string name="compose_1_6_title">Seekable Animation</string>
     <string name="seekable_animation_screen_title">Seekable Animation</string>

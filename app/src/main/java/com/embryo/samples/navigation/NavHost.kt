@@ -8,7 +8,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.embryo.commons.Callback
 import com.embryo.navigation.Routes
+import com.embryo.samples.animations.BouncyRopes
 import com.embryo.samples.animations.GestureDrawer
+import com.embryo.samples.animations.GradientAlongPathAnimation
 import com.embryo.samples.animations.SmoothLineGraph
 import com.embryo.samples.compose_1_6_try.*
 import com.embryo.samples.home.HomeScreen
@@ -56,6 +58,16 @@ fun SamplesNavHost(
         }
         composable(Routes.SmoothLineGraph) {
             SmoothLineGraph(
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(Routes.GradientAlongPathAnimation) {
+            GradientAlongPathAnimation(
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(Routes.BouncyRopes) {
+            BouncyRopes(
                 onBackClick = { navController.popBackStack() }
             )
         }

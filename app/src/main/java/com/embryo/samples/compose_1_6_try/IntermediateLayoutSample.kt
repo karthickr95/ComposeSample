@@ -21,6 +21,7 @@ import com.embryo.samples.R
 import com.embryo.samples.SampleScaffold
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun IntermediateLayoutSample(
     onBackClick: () -> Unit,
