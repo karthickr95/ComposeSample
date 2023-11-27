@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Samples</string>
+
+    <string name="home_screen_title">Home</string>
+    <string name="particle_screen_title">Particle Animation</string>
+    <string name="small_animations_screen_title">Small Animations</string>
+    <string name="smooth_line_graph_title">Smooth Line Graph</string>
+
+    <string name="compose_1_6_title">Seekable Animation</string>
+    <string name="seekable_animation_screen_title">Seekable Animation</string>
+    <string name="seekable_animation_screen_2_title">Seekable Animation 2</string>
+    <string name="text_field_title">TextField</string>
+    <string name="intermediate_layout_title">Intermediate Layout</string>
+    <string name="lookahead_coordinate_title">Lookahead Coordinate</string>
+    <string name="lookahead_content_size_animation_title">Lookahead ContentSize Coordinate</string>
+    <string name="anchor_draggable_title">Anchor Draggable</string>
+
+</resources>
