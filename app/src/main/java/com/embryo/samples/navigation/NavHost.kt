@@ -13,7 +13,8 @@ import com.embryo.samples.animations.GestureDrawer
 import com.embryo.samples.animations.GradientAlongPathAnimation
 import com.embryo.samples.animations.SmoothLineGraph
 import com.embryo.samples.compose_1_6_try.*
-import com.embryo.samples.home.HomeScreen
+import com.embryo.commons.home.HomeScreen
+import com.embryo.coroutines_sample.coroutinesSampleNavigationGraph
 import com.embryo.samples.particle.ParticleAnimationScreen
 import com.embryo.samples.small_animations.SmallAnimationsScreen
 
@@ -33,6 +34,7 @@ fun SamplesNavHost(
     ) {
         composable(Routes.Home) {
             HomeScreen(
+                title = "Home",
                 routes = Routes.allRoutes,
                 onBackClick = onCloseAppAction,
                 onNavClick = { route ->
@@ -40,6 +42,8 @@ fun SamplesNavHost(
                 }
             )
         }
+        compose16NavigationGraph(navController, Routes.Compose16Try)
+        coroutinesSampleNavigationGraph(navController, Routes.CoroutinesSamples)
         composable(Routes.ParticleAnimation) {
             ParticleAnimationScreen(
                 onBackClick = { navController.popBackStack() }
@@ -50,7 +54,6 @@ fun SamplesNavHost(
                 onBackClick = { navController.popBackStack() }
             )
         }
-        compose16NavigationGraph(navController, Routes.Compose16Try)
         composable(Routes.GestureDrawer) {
             GestureDrawer(
                 onBackClick = { navController.popBackStack() }

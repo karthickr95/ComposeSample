@@ -4,6 +4,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -57,6 +59,8 @@ dependencies {
 
     implementation(project(":commons"))
     implementation(project(":navigation"))
+    implementation(project(":extensions"))
+    implementation(project(":coroutines-sample"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -71,6 +75,9 @@ dependencies {
 
     implementation(libs.navigation)
     implementation(libs.kotlinx.collection)
+
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 

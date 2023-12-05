@@ -4,8 +4,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.embryo.samples.R
-import com.embryo.samples.home.HomeScreen
+import com.embryo.commons.home.HomeScreen
 
 @Suppress("ConstPropertyName")
 private object Compose16Routes {
@@ -41,7 +40,7 @@ fun NavGraphBuilder.compose16NavigationGraph(
         composable(Compose16Routes.Home) {
             HomeScreen(
                 routes = Compose16Routes.allRoutes,
-                titleRes = R.string.compose_1_6_title,
+                title = "Compose 1.6 Try Out",
                 onBackClick = navController::popBackStack,
                 onNavClick = { route -> navController.navigate(route) }
             )

@@ -39,8 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toIntRect
 import androidx.compose.ui.unit.toSize
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.launch
 import java.math.BigDecimal
@@ -53,7 +52,7 @@ fun SmoothLineGraph(
     onBackClick: () -> Unit,
 ) {
     SampleScaffold(
-        titleRes = R.string.smooth_line_graph_title,
+        title = "Smooth Line Graph",
         onBackClick = onBackClick,
         backgroundColor = PurpleBackgroundColor,
     ) {

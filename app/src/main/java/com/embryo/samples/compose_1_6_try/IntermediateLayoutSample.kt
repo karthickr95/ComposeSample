@@ -17,8 +17,7 @@ import androidx.compose.ui.layout.intermediateLayout
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -27,7 +26,7 @@ fun IntermediateLayoutSample(
     onBackClick: () -> Unit,
 ) {
     SampleScaffold(
-        titleRes = R.string.intermediate_layout_title,
+        title = "Intermediate Layout",
         onBackClick = onBackClick
     ) {
         // Creates a custom modifier that animates the constraints and measures child with the

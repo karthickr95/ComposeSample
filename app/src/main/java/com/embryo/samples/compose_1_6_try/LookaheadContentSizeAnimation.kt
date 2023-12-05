@@ -19,8 +19,7 @@ import androidx.compose.ui.layout.LookaheadScope
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 import kotlinx.coroutines.launch
 
 @Composable
@@ -28,7 +27,7 @@ fun AnimateContentSizeAfterLookaheadPass(
     onBackClick: () -> Unit,
 ) {
     SampleScaffold(
-        titleRes = R.string.lookahead_content_size_animation_title,
+        title = "Lookahead ContentSize Coordinate",
         onBackClick = onBackClick
     ) {
         var sizeAnim by remember {

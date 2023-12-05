@@ -1,6 +1,5 @@
-package com.embryo.samples
+package com.embryo.commons.home
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -15,9 +14,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.embryo.commons.CommonStrings
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SampleScaffold(
-    @StringRes titleRes: Int,
+    title: String,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
     verticalArrangement: Arrangement.Vertical = Arrangement.spacedBy(16.dp),
@@ -38,7 +38,7 @@ fun SampleScaffold(
                     }
                 },
                 title = {
-                    Text(text = stringResource(titleRes))
+                    Text(text = title)
                 }
             )
         }

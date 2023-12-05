@@ -4,7 +4,6 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text2.BasicTextField2
 import androidx.compose.foundation.text2.input.rememberTextFieldState
 import androidx.compose.material3.MaterialTheme
@@ -13,8 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.embryo.commons.OnClick
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -22,7 +20,7 @@ fun TextFieldSample(
     onBackClick: OnClick,
 ) {
     SampleScaffold(
-        titleRes = R.string.text_field_title,
+        title = "TextField",
         onBackClick = onBackClick
     ) {
         val state = rememberTextFieldState()

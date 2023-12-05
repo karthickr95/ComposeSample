@@ -8,15 +8,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.embryo.commons.OnClick
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 
 @Composable
 fun SmallAnimationsScreen(
     onBackClick: OnClick,
 ) {
     SampleScaffold(
-        titleRes = R.string.small_animations_screen_title,
+        title = "Small Animations",
         onBackClick = onBackClick,
         verticalArrangement = Arrangement.Top,
     ) {

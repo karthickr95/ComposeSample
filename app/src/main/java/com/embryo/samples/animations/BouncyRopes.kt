@@ -16,15 +16,14 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 
 @Composable
 fun BouncyRopes(
     onBackClick: () -> Unit
 ) {
     SampleScaffold(
-        titleRes = R.string.bouncy_rope_title,
+        title = "Bouncy Rope",
         onBackClick = onBackClick,
     ) {
         val startCoOrdinate by remember {

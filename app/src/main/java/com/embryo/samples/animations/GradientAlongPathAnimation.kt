@@ -26,8 +26,7 @@ import androidx.compose.ui.graphics.vector.PathParser
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.flatten
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 import kotlin.math.floor
 
 /**
@@ -40,7 +39,7 @@ fun GradientAlongPathAnimation(
     onBackClick: () -> Unit
 ) {
     SampleScaffold(
-        titleRes = R.string.gradient_along_path_animation_title,
+        title = "Gradient Along Path Animation",
         onBackClick = onBackClick,
     ) {
         val path = remember {

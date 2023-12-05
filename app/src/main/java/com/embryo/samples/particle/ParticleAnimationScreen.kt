@@ -18,15 +18,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.embryo.commons.OnClick
 import com.embryo.commons.spacer.HeightSpacer
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 
 @Composable
 fun ParticleAnimationScreen(
     onBackClick: OnClick,
 ) {
     SampleScaffold(
-        titleRes = R.string.particle_screen_title,
+        title = "Particle Animation",
         onBackClick = onBackClick,
     ) {
         val automatic = remember { mutableStateOf(true) }

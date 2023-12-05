@@ -132,8 +132,7 @@ fun Explosion(
                 strokeWidth = 2.dp.toPx()
             )
 
-            val progressValue = progress
-            particles.forEach { it.updateProgress(progressValue) }
+            particles.forEach { it.updateProgress(progress) }
 
             // Particle
             particles.forEach { particle ->

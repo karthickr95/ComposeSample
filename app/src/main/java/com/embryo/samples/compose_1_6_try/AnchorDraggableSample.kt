@@ -20,8 +20,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 import kotlin.math.roundToInt
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -30,7 +29,7 @@ fun AnchoredDraggableSample(
     onBackClick: () -> Unit,
 ) {
     SampleScaffold(
-        titleRes = R.string.anchor_draggable_title,
+        title = "Anchor Draggable",
         onBackClick = onBackClick
     ) {
 

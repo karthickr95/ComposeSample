@@ -1,14 +1,16 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.embryo.commons"
-    compileSdk = 33
+    namespace = "com.embryo.coroutines_sample"
+    compileSdk = 34
 
     defaultConfig {
-        minSdk = 29
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,7 +28,12 @@ android {
         jvmTarget = "1.8"
     }
 }
+
 dependencies {
+
+    implementation(project(":commons"))
+
+    implementation(libs.core.ktx)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
@@ -35,8 +42,20 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.ui.tooling.preview)
 
+    implementation(libs.navigation)
+    implementation(libs.lifecycle.compose)
+    implementation(libs.hilt.navigation.compose)
+
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }
-

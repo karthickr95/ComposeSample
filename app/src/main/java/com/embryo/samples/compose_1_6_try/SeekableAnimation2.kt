@@ -19,8 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.embryo.commons.OnClick
 import com.embryo.commons.animation.AnimatedVisibility
 import com.embryo.commons.animation.rememberSeekableTransitionState
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalTransitionApi::class)
@@ -29,7 +28,7 @@ fun SeekableAnimation2(
     onBackClick: OnClick,
 ) {
     SampleScaffold(
-        titleRes = R.string.seekable_animation_screen_2_title,
+        title = "Seekable Animation 2",
         onBackClick = onBackClick
     ) {
         Column(

@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.embryo.commons.OnClick
 import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
+import com.embryo.commons.home.SampleScaffold
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -29,7 +29,7 @@ fun SeekableAnimation(
     onBackClick: OnClick,
 ) {
     SampleScaffold(
-        titleRes = R.string.seekable_animation_screen_title,
+        title = "Seekable Animation",
         onBackClick = onBackClick
     ) {
         val seekingState =

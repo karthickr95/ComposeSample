@@ -1,11 +1,10 @@
-package com.embryo.samples.home
+package com.embryo.commons.home
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.KeyboardArrowRight
+import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -15,19 +14,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.embryo.commons.OnClick
-import com.embryo.navigation.Routes
-import com.embryo.samples.R
-import com.embryo.samples.SampleScaffold
 
 @Composable
 fun HomeScreen(
     routes: Array<String>,
     onNavClick: (String) -> Unit,
     onBackClick: OnClick,
-    @StringRes titleRes: Int = R.string.home_screen_title,
+    title: String,
 ) {
     SampleScaffold(
-        titleRes = titleRes,
+        title = title,
         onBackClick = onBackClick,
         verticalArrangement = Arrangement.Top,
     ) {
@@ -75,7 +71,7 @@ private fun RouteItem(
                 fontSize = 16.sp,
             )
             Icon(
-                imageVector = Icons.Rounded.KeyboardArrowRight,
+                imageVector = Icons.AutoMirrored.Rounded.KeyboardArrowRight,
                 contentDescription = route
             )
         }
@@ -86,8 +82,9 @@ private fun RouteItem(
 @Composable
 private fun PreviewHomeScreen() {
     HomeScreen(
-        routes = Routes.allRoutes,
+        routes = arrayOf("Home", "Sample"),
         onBackClick = {},
-        onNavClick = {}
+        onNavClick = {},
+        title = "Home"
     )
 }
