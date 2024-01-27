@@ -17,6 +17,7 @@ private object Compose16Routes {
     const val LookaheadSample = "lookahead_sample"
     const val LookaheadContentSizeAnimation = "lookahead_content_size_animation"
     const val AnchorDraggable = "anchor_draggable"
+    const val LookaheadFlow = "lookahead_flow"
 
     val allRoutes: Array<String> = arrayOf(
         SeekableAnimation,
@@ -26,6 +27,7 @@ private object Compose16Routes {
         LookaheadSample,
         LookaheadContentSizeAnimation,
         AnchorDraggable,
+        LookaheadFlow,
     )
 }
 
@@ -77,6 +79,11 @@ fun NavGraphBuilder.compose16NavigationGraph(
         }
         composable(Compose16Routes.AnchorDraggable) {
             AnchoredDraggableSample(
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(Compose16Routes.LookaheadFlow) {
+            LookaheadFlowSample(
                 onBackClick = { navController.popBackStack() }
             )
         }

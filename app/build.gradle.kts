@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
-
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
@@ -40,7 +38,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-        freeCompilerArgs = listOf("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
+        freeCompilerArgs = listOf(
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-Xcontext-receivers",
+        )
     }
     buildFeatures {
         compose = true

@@ -8,6 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowLeft
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -20,6 +21,7 @@ fun SampleScaffold(
     title: String,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier,
+    horizontalAlignment: Alignment.Horizontal = Alignment.Start,
     verticalArrangement: Arrangement.Vertical = Arrangement.spacedBy(16.dp),
     scrollable: Boolean = false,
     backgroundColor: Color = MaterialTheme.colorScheme.background,
@@ -53,6 +55,7 @@ fun SampleScaffold(
                     if (scrollable) Modifier.verticalScroll(rememberScrollState())
                     else Modifier
                 ),
+            horizontalAlignment = horizontalAlignment,
             verticalArrangement = verticalArrangement,
             content = content,
         )
