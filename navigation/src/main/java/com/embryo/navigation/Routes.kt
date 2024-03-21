@@ -12,6 +12,7 @@ object Routes {
     const val SmoothLineGraph = "smooth_line_graph"
     const val GradientAlongPathAnimation = "gradient_along_path_animation"
     const val BouncyRopes = "bouncy_ropes"
+    const val AllTrackers = "all_trackers"
 
     val allRoutes: Array<String> = arrayOf(
         Compose16Try,
@@ -22,6 +23,7 @@ object Routes {
         SmoothLineGraph,
         GradientAlongPathAnimation,
         BouncyRopes,
+        AllTrackers
     )
 
 }
