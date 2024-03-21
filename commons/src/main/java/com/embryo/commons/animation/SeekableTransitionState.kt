@@ -9,18 +9,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 
 
-@OptIn(ExperimentalTransitionApi::class)
 @Composable
-fun <S> rememberSeekableTransitionState(
-    initialValue: S,
-    targetValue: S,
-): SeekableTransitionState<S> {
+fun <S> rememberSeekableTransitionState(initialValue: S): SeekableTransitionState<S> {
     return remember {
-        SeekableTransitionState(initialValue, targetValue)
+        SeekableTransitionState(initialValue)
     }
 }
 
-@OptIn(ExperimentalTransitionApi::class, ExperimentalAnimationApi::class)
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun <S> SeekableTransitionState<S>.AnimatedVisibility(
     visible: (S) -> Boolean,

@@ -3,7 +3,6 @@ package com.embryo.samples.animations
 
 import android.graphics.PointF
 import android.view.HapticFeedbackConstants
-import androidx.compose.animation.core.ExperimentalTransitionApi
 import androidx.compose.animation.core.SeekableTransitionState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.gestures.detectDragGesturesAfterLongPress
@@ -46,7 +45,6 @@ import java.math.BigDecimal
 import java.time.LocalDate
 import kotlin.math.roundToInt
 
-@OptIn(ExperimentalTransitionApi::class)
 @Composable
 fun SmoothLineGraph(
     onBackClick: () -> Unit,
@@ -59,7 +57,7 @@ fun SmoothLineGraph(
 
         val scope = rememberCoroutineScope()
         val seekingState =
-            remember { SeekableTransitionState(Graph.Start, Graph.End) }
+            remember { SeekableTransitionState(Graph.Start) }
 
         var highlightedWeek by remember { mutableStateOf<Int?>(null) }
         val localView = LocalView.current
@@ -71,7 +69,7 @@ fun SmoothLineGraph(
         }
 
         LaunchedEffect(key1 = graphData, block = {
-            seekingState.animateToTargetState(tween(3000))
+            seekingState.animateTo(Graph.End, tween(3000))
         })
 
         val coroutineScope = rememberCoroutineScope()
@@ -87,8 +85,8 @@ fun SmoothLineGraph(
                 .pointerInput(Unit) {
                     detectTapGestures {
                         coroutineScope.launch {
-                            seekingState.animateToCurrentState(tween(3000))
-                            seekingState.animateToTargetState(tween(3000))
+                            seekingState.animateTo(Graph.Start, tween(3000))
+                            seekingState.animateTo(Graph.End, tween(3000))
                         }
                     }
                 }
@@ -168,7 +166,7 @@ fun SmoothLineGraph(
         Row {
             Button(onClick = {
                 scope.launch {
-                    seekingState.animateToCurrentState(tween(3000))
+                    seekingState.animateTo(Graph.Start, tween(3000))
                 }
             }) {
                 Text("Start")
@@ -180,13 +178,13 @@ fun SmoothLineGraph(
                     .padding(horizontal = 10.dp),
                 onValueChange = { value ->
                     scope.launch {
-                        seekingState.snapToFraction(value)
+                        seekingState.seekTo(value)
                     }
                 }
             )
             Button(onClick = {
                 scope.launch {
-                    seekingState.animateToTargetState(tween(3000))
+                    seekingState.animateTo(Graph.End, tween(3000))
                 }
             }) {
                 Text("End")

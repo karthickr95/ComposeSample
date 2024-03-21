@@ -33,17 +33,17 @@ fun SeekableAnimation(
         onBackClick = onBackClick
     ) {
         val seekingState =
-            remember { SeekableTransitionState(SquareSize.Small, SquareSize.Large) }
+            remember { SeekableTransitionState(SquareSize.Small) }
         val scope = rememberCoroutineScope()
 
         LaunchedEffect(key1 = Unit) {
             delay(2000)
-            seekingState.animateToTargetState()
+            seekingState.animateTo(SquareSize.Large)
         }
         Row {
             Button(onClick = {
                 scope.launch {
-                    seekingState.animateToCurrentState()
+                    seekingState.animateTo(SquareSize.Small)
                 }
             }) {
                 Text("Small")
@@ -55,13 +55,13 @@ fun SeekableAnimation(
                     .padding(horizontal = 10.dp),
                 onValueChange = { value ->
                     scope.launch {
-                        seekingState.snapToFraction(value)
+                        seekingState.seekTo(value)
                     }
                 }
             )
             Button(onClick = {
                 scope.launch {
-                    seekingState.animateToTargetState()
+                    seekingState.animateTo(SquareSize.Large)
                 }
             }) {
                 Text("Large")

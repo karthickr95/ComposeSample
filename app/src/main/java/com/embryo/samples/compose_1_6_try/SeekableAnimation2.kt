@@ -1,6 +1,5 @@
 package com.embryo.samples.compose_1_6_try
 
-import androidx.compose.animation.core.ExperimentalTransitionApi
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -22,7 +21,6 @@ import com.embryo.commons.animation.rememberSeekableTransitionState
 import com.embryo.commons.home.SampleScaffold
 import kotlinx.coroutines.delay
 
-@OptIn(ExperimentalTransitionApi::class)
 @Composable
 fun SeekableAnimation2(
     onBackClick: OnClick,
@@ -37,9 +35,9 @@ fun SeekableAnimation2(
                 .verticalScroll(rememberScrollState())
         ) {
 
-            val seek1 = rememberSeekableTransitionState(initialValue = false, targetValue = true)
-            val seek2 = rememberSeekableTransitionState(initialValue = false, targetValue = true)
-            val seek3 = rememberSeekableTransitionState(initialValue = false, targetValue = true)
+            val seek1 = rememberSeekableTransitionState(initialValue = false)
+            val seek2 = rememberSeekableTransitionState(initialValue = false)
+            val seek3 = rememberSeekableTransitionState(initialValue = false)
 
             LaunchedEffect(Unit) {
                 /*delay(500)
@@ -51,11 +49,11 @@ fun SeekableAnimation2(
             }
 
             for (i in 1L..10L) {
-                val seek = rememberSeekableTransitionState(initialValue = false, targetValue = true)
+                val seek = rememberSeekableTransitionState(initialValue = false)
 
                 LaunchedEffect(Unit) {
                     delay(i * 1000)
-                    seek.animateToTargetState()
+                    seek.animateTo(true)
                 }
 
                 seek.AnimatedVisibility(

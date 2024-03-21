@@ -1,6 +1,8 @@
 package com.embryo.samples.compose_1_6_try
 
+import androidx.compose.animation.core.animateDecay
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.rememberSplineBasedDecay
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.AnchoredDraggableState
@@ -49,13 +51,16 @@ fun AnchoredDraggableSample(
                     }
                 }
 
+                val decayAnimationSpec = rememberSplineBasedDecay<Float>()
+
                 val state = remember {
                     AnchoredDraggableState(
                         initialValue = DragValue.Start,
                         anchors = draggableAnchors,
                         positionalThreshold = { distance -> distance * 0.5f },
                         velocityThreshold = { with(density) { 56.dp.toPx() } },
-                        animationSpec = spring()
+                        snapAnimationSpec = spring(),
+                        decayAnimationSpec = decayAnimationSpec
                     )
                 }
 
