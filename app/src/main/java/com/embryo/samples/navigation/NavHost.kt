@@ -76,5 +76,25 @@ fun SamplesNavHost(
                 onBackClick = { navController.popBackStack() }
             )
         }
+        composable(Routes.LazyColumnAnimateItem) {
+            LookaheadWithAnimateItem(
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(Routes.LookaheadWithDisappearingMovableContentDemo) {
+            LookaheadWithDisappearingMovableContentDemo(
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(Routes.ContainerTransform) {
+            ContainerTransform(
+                onBackClick = { navController.popBackStack() }
+            )
+        }
+        composable(Routes.DemoScreen) {
+            DemoScreen(
+                onBackClick = { navController.popBackStack() }
+            )
+        }
     }
 }

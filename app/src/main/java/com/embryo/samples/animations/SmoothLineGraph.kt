@@ -3,14 +3,12 @@ package com.embryo.samples.animations
 
 import android.graphics.PointF
 import android.view.HapticFeedbackConstants
-import androidx.compose.animation.core.SeekableTransitionState
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.gestures.detectDragGesturesAfterLongPress
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -58,6 +56,12 @@ fun SmoothLineGraph(
         val scope = rememberCoroutineScope()
         val seekingState =
             remember { SeekableTransitionState(Graph.Start) }
+
+        val transition = rememberTransition(transitionState = seekingState)
+
+        val seekingFraction = transition.animateFloat(label = "Seeking") {
+            if (it == Graph.Start) 0f else 1f
+        }
 
         var highlightedWeek by remember { mutableStateOf<Int?>(null) }
         val localView = LocalView.current
@@ -140,7 +144,7 @@ fun SmoothLineGraph(
                         }
 
                         // draw line
-                        clipRect(right = size.width * seekingState.fraction) {
+                        clipRect(right = size.width * seekingFraction.value) {
                             drawPath(path, Color.Green, style = Stroke(2.dp.toPx()))
 
                             drawPath(
@@ -171,16 +175,10 @@ fun SmoothLineGraph(
             }) {
                 Text("Start")
             }
-            Slider(
-                value = seekingState.fraction,
+            Spacer(
                 modifier = Modifier
                     .weight(1f)
                     .padding(horizontal = 10.dp),
-                onValueChange = { value ->
-                    scope.launch {
-                        seekingState.seekTo(value)
-                    }
-                }
             )
             Button(onClick = {
                 scope.launch {

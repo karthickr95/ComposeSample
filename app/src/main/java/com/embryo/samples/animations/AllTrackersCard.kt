@@ -2,20 +2,14 @@ package com.embryo.samples.animations
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.KeyboardArrowDown
 import androidx.compose.material3.Card
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.node.ModifierNodeElement
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,12 +25,13 @@ fun AllTrackersCard(
     SampleScaffold(
         title = "All Trackers Animation",
         onBackClick = onBackClick,
+        modifier = modifier,
     ) {
 
         LookaheadScope {
 
             Card(
-                modifier = modifier.trackersCardApproachSizeAnimation(),
+                modifier = Modifier.trackersCardApproachSizeAnimation(),
                 onClick = { expanded.value = !expanded.value },
                 shape = MaterialTheme.shapes.large,
             ) {
@@ -87,33 +82,8 @@ private fun LookaheadScope.Tracker(
     )
 }
 
-@Composable
-private fun ExpandCollapseContent(
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-) {
-    Box(
-        modifier = modifier
-            .fillMaxWidth()
-            .clickable(
-                interactionSource = interactionSource,
-                indication = null,
-                onClick = onClick,
-            )
-    ) {
-        Icon(
-            modifier = Modifier.graphicsLayer {
-                //rotationZ = if (transition.currentState) 0f else 180f
-            },
-            imageVector = Icons.Rounded.KeyboardArrowDown,
-            contentDescription = null,
-        )
-    }
-}
-
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalAnimatableApi::class)
-private fun Modifier.trackersCardApproachSizeAnimation() : Modifier = composed {
+private fun Modifier.trackersCardApproachSizeAnimation(): Modifier = composed {
     val sizeAnimation = remember { DeferredTargetAnimation(IntSize.VectorConverter) }
     val coroutineScope = rememberCoroutineScope()
     approachLayout(

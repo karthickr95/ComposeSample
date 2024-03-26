@@ -68,10 +68,11 @@ dependencies {
     implementation(libs.activity.compose)
 
     implementation(platform(libs.compose.bom))
-    implementation(libs.animation)
+    implementation(libs.foundation)
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
+    implementation(libs.animation)
     implementation(libs.material3)
 
     implementation(libs.navigation)

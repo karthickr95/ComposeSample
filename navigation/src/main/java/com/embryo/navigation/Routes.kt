@@ -13,8 +13,13 @@ object Routes {
     const val GradientAlongPathAnimation = "gradient_along_path_animation"
     const val BouncyRopes = "bouncy_ropes"
     const val AllTrackers = "all_trackers"
+    const val LazyColumnAnimateItem = "lazy_column_animate_item"
+    const val LookaheadWithDisappearingMovableContentDemo = "LookaheadWithDisappearingMovableContentDemo"
+    const val ContainerTransform = "container_transform"
+    const val DemoScreen = "demo"
 
     val allRoutes: Array<String> = arrayOf(
+        DemoScreen,
         Compose16Try,
         CoroutinesSamples,
         ParticleAnimation,
@@ -23,7 +28,10 @@ object Routes {
         SmoothLineGraph,
         GradientAlongPathAnimation,
         BouncyRopes,
-        AllTrackers
+        AllTrackers,
+        LazyColumnAnimateItem,
+        LookaheadWithDisappearingMovableContentDemo,
+        ContainerTransform,
     )
 
 }
