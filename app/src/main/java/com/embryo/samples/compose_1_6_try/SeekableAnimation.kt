@@ -21,7 +21,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-@OptIn(ExperimentalTransitionApi::class, ExperimentalAnimationApi::class)
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun SeekableAnimation(
     onBackClick: OnClick,
@@ -30,8 +30,7 @@ fun SeekableAnimation(
         title = "Seekable Animation",
         onBackClick = onBackClick
     ) {
-        val seekingState =
-            remember { SeekableTransitionState(SquareSize.Small) }
+        val seekingState = remember { SeekableTransitionState(SquareSize.Small) }
         val scope = rememberCoroutineScope()
 
         LaunchedEffect(key1 = Unit) {
