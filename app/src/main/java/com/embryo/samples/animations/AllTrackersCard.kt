@@ -87,7 +87,7 @@ private fun Modifier.trackersCardApproachSizeAnimation(): Modifier = composed {
     val sizeAnimation = remember { DeferredTargetAnimation(IntSize.VectorConverter) }
     val coroutineScope = rememberCoroutineScope()
     approachLayout(
-        isMeasurementApproachComplete = {
+        isMeasurementApproachInProgress = {
             sizeAnimation.updateTarget(it, coroutineScope, sizeAnimSpec)
             sizeAnimation.isIdle
         },
@@ -111,12 +111,12 @@ private class TrackersApproachLayoutModifierNode(
     private val offsetAnimation: DeferredTargetAnimation<IntOffset, AnimationVector2D> =
         DeferredTargetAnimation(IntOffset.VectorConverter)
 
-    override fun isMeasurementApproachComplete(lookaheadSize: IntSize): Boolean {
+    override fun isMeasurementApproachInProgress(lookaheadSize: IntSize): Boolean {
         sizeAnimation.updateTarget(lookaheadSize, coroutineScope, sizeAnimSpec)
         return sizeAnimation.isIdle
     }
 
-    override fun Placeable.PlacementScope.isPlacementApproachComplete(
+    override fun Placeable.PlacementScope.isPlacementApproachInProgress(
         lookaheadCoordinates: LayoutCoordinates,
     ): Boolean {
         val target: IntOffset = with(lookaheadScope) {
