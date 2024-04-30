@@ -259,11 +259,11 @@ fun Modifier.animateLayout(): Modifier = composed {
     val offsetAnim = remember { DeferredTargetAnimation(IntOffset.VectorConverter) }
     val scope = rememberCoroutineScope()
     this.approachLayout(
-        isMeasurementApproachComplete = { lookaheadSize ->
+        isMeasurementApproachInProgress = { lookaheadSize ->
             sizeAnim.updateTarget(lookaheadSize, scope, tween(1800))
             sizeAnim.isIdle
         },
-        isPlacementApproachComplete = { lookaheadCoordinates ->
+        isPlacementApproachInProgress = { lookaheadCoordinates ->
             val target = lookaheadScopeCoordinates.localLookaheadPositionOf(lookaheadCoordinates)
             offsetAnim.updateTarget(target.round(), scope, tween(1800))
             offsetAnim.isIdle

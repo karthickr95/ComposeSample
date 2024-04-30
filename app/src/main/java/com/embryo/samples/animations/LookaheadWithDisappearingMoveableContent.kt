@@ -132,8 +132,9 @@ fun Modifier.animatePosition(): Modifier = composed {
         DeferredTargetAnimation(IntOffset.VectorConverter)
     }
     val coroutineScope = rememberCoroutineScope()
-    this.approachLayout(isMeasurementApproachComplete = { true },
-        isPlacementApproachComplete = {
+    this.approachLayout(
+        isMeasurementApproachInProgress = { true },
+        isPlacementApproachInProgress = {
             offsetAnimation.updateTarget(
                 lookaheadScopeCoordinates.localLookaheadPositionOf(
                     it

@@ -13,21 +13,15 @@ private object Compose16Routes {
     const val SeekableAnimation = "seekable_animation"
     const val SeekableAnimation2 = "seekable_animation_2"
     const val TextField = "text_field"
-    const val IntermediateLayoutSample = "intermediate_layout_sample"
-    const val LookaheadSample = "lookahead_sample"
     const val LookaheadContentSizeAnimation = "lookahead_content_size_animation"
     const val AnchorDraggable = "anchor_draggable"
-    const val LookaheadFlow = "lookahead_flow"
 
     val allRoutes: Array<String> = arrayOf(
         SeekableAnimation,
         SeekableAnimation2,
         TextField,
-        IntermediateLayoutSample,
-        LookaheadSample,
         LookaheadContentSizeAnimation,
         AnchorDraggable,
-        LookaheadFlow,
     )
 }
 
@@ -62,16 +56,6 @@ fun NavGraphBuilder.compose16NavigationGraph(
                 onBackClick = { navController.popBackStack() }
             )
         }
-        composable(Compose16Routes.IntermediateLayoutSample) {
-            IntermediateLayoutSample(
-                onBackClick = { navController.popBackStack() }
-            )
-        }
-        composable(Compose16Routes.LookaheadSample) {
-            LookaheadLayoutCoordinatesSample(
-                onBackClick = { navController.popBackStack() }
-            )
-        }
         composable(Compose16Routes.LookaheadContentSizeAnimation) {
             AnimateContentSizeAfterLookaheadPass(
                 onBackClick = { navController.popBackStack() }
@@ -79,11 +63,6 @@ fun NavGraphBuilder.compose16NavigationGraph(
         }
         composable(Compose16Routes.AnchorDraggable) {
             AnchoredDraggableSample(
-                onBackClick = { navController.popBackStack() }
-            )
-        }
-        composable(Compose16Routes.LookaheadFlow) {
-            LookaheadFlowSample(
                 onBackClick = { navController.popBackStack() }
             )
         }

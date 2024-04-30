@@ -77,12 +77,12 @@ fun DemoScreen(
 
 context(LookaheadScope)
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalAnimatableApi::class)
-private fun Modifier.animateLayout1(): Modifier  = composed {
+private fun Modifier.animateLayout1(): Modifier = composed {
     val offsetAnim = remember { DeferredTargetAnimation(IntOffset.VectorConverter) }
     val scope = rememberCoroutineScope()
-    this then approachLayout(
-        isMeasurementApproachComplete = { true },
-        isPlacementApproachComplete = {
+    approachLayout(
+        isMeasurementApproachInProgress = { true },
+        isPlacementApproachInProgress = {
             offsetAnim.updateTarget(
                 it.localLookaheadPositionOf(it).round(),
                 scope,
@@ -115,7 +115,7 @@ private fun Modifier.animateLayout1(): Modifier  = composed {
     )
 }
 
-private val AnimationSpec : FiniteAnimationSpec<IntOffset> = tween(2000)
+private val AnimationSpec: FiniteAnimationSpec<IntOffset> = tween(2000)
 
 val attributeColors = listOf(
     Color(0xFFFF928D),
