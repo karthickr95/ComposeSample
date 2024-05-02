@@ -17,6 +17,9 @@ object Routes {
     const val LookaheadWithDisappearingMovableContentDemo = "LookaheadWithDisappearingMovableContentDemo"
     const val ContainerTransform = "container_transform"
     const val DemoScreen = "demo"
+    const val SharedElementTransition = "shared_element_transition"
+    const val SharedBoundsList = "shared_hounds_list"
+    const val SharedBoundsDetail = "shared_hounds_detail"
 
     val allRoutes: Array<String> = arrayOf(
         DemoScreen,
@@ -32,6 +35,8 @@ object Routes {
         LazyColumnAnimateItem,
         LookaheadWithDisappearingMovableContentDemo,
         ContainerTransform,
+        SharedElementTransition,
+        SharedBoundsList,
     )
 
 }
