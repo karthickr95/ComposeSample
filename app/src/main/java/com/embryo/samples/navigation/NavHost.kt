@@ -1,9 +1,11 @@
 package com.embryo.samples.navigation
 
+import android.content.Intent
 import androidx.compose.animation.ExperimentalSharedTransitionApi
-import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -25,10 +27,12 @@ import com.embryo.samples.animations.LookaheadWithAnimateItem
 import com.embryo.samples.animations.LookaheadWithDisappearingMovableContentDemo
 import com.embryo.samples.animations.SmoothLineGraph
 import com.embryo.samples.compose_1_6_try.compose16NavigationGraph
+import com.embryo.samples.lifecycle.AActivity
 import com.embryo.samples.particle.ParticleAnimationScreen
 import com.embryo.samples.sharedtransition.SharedBoundsDetail
 import com.embryo.samples.sharedtransition.SharedBoundsList
 import com.embryo.samples.sharedtransition.SharedElementTransition
+import com.embryo.samples.sharedtransition.SharedElementWithCallerManagedVisibility
 import com.embryo.samples.small_animations.SmallAnimationsScreen
 
 @OptIn(ExperimentalSharedTransitionApi::class)
@@ -39,6 +43,9 @@ fun SamplesNavHost(
     startDestination: String = Routes.Home,
 ) {
 
+    val context = LocalContext.current
+
+
     val ironManDrawables = intArrayOf(
         R.drawable.iron_man,
         R.drawable.iron_man_2,
@@ -47,9 +54,9 @@ fun SamplesNavHost(
     )
 
     val navController: NavHostController = rememberNavController()
-    SharedTransitionLayout {
+    SharedTransitionScope {
         NavHost(
-            modifier = modifier,
+            modifier = it.then(modifier),
             navController = navController,
             startDestination = startDestination,
         ) {
@@ -60,6 +67,9 @@ fun SamplesNavHost(
                     onBackClick = onCloseAppAction,
                     onNavClick = { route ->
                         navController.navigate(route)
+                    },
+                    startLifecycleActivity = {
+                        context.startActivity(Intent(context, AActivity::class.java))
                     }
                 )
             }

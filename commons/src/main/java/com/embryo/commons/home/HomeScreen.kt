@@ -20,6 +20,7 @@ fun HomeScreen(
     routes: Array<String>,
     onNavClick: (String) -> Unit,
     onBackClick: OnClick,
+    startLifecycleActivity: (() -> Unit)? = null,
     title: String,
 ) {
     SampleScaffold(
@@ -36,6 +37,19 @@ fun HomeScreen(
             val routeItemModifier = Modifier
                 .fillMaxWidth()
                 .heightIn(min = 48.dp)
+
+            startLifecycleActivity?.let { lambda ->
+                item(
+                    key = "lifecycle"
+                ) {
+                    RouteItem(
+                        modifier = routeItemModifier,
+                        route = "Lifecycle",
+                        onClick = lambda,
+                    )
+                }
+            }
+
             items(
                 items = routes,
                 key = { it }
@@ -85,6 +99,7 @@ private fun PreviewHomeScreen() {
         routes = arrayOf("Home", "Sample"),
         onBackClick = {},
         onNavClick = {},
+        startLifecycleActivity = null,
         title = "Home"
     )
 }

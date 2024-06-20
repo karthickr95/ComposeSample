@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:name=".SamplesApplication"
         android:allowBackup="true"
@@ -13,6 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Samples"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -23,6 +30,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".lifecycle.AActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Samples" />
+
+        <activity
+            android:name=".lifecycle.BActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Samples" />
+
     </application>
 
 </manifest>
