@@ -152,6 +152,11 @@ fun SamplesNavHost(
                     onBackClick = { navController.popBackStack() },
                 )
             }
+            composable(Routes.SharedElementWithCallerManagedVisibility) {
+                SharedElementWithCallerManagedVisibility(
+                    onBackClick = { navController.popBackStack() },
+                )
+            }
         }
     }
 }

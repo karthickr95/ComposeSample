@@ -62,7 +62,7 @@ dependencies {
     implementation(project(":coroutines-sample"))
 
     implementation(libs.core.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.runtime)
     implementation(libs.activity.compose)
 
     implementation(platform(libs.compose.bom))
@@ -78,6 +78,9 @@ dependencies {
 
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
+
+    implementation(libs.arrow.core)
+    implementation(libs.arrow.fx.coroutines)
 
     testImplementation(libs.junit)
 

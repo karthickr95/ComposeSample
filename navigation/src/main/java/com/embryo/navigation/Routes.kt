@@ -20,6 +20,7 @@ object Routes {
     const val SharedElementTransition = "shared_element_transition"
     const val SharedBoundsList = "shared_hounds_list"
     const val SharedBoundsDetail = "shared_hounds_detail"
+    const val SharedElementWithCallerManagedVisibility = "shared_element_caller_managed_visibility"
 
     val allRoutes: Array<String> = arrayOf(
         DemoScreen,
@@ -37,6 +38,7 @@ object Routes {
         ContainerTransform,
         SharedElementTransition,
         SharedBoundsList,
+        SharedElementWithCallerManagedVisibility,
     )
 
 }
