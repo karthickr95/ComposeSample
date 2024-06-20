@@ -1,21 +1,21 @@
 [versions]
-agp = "8.4.0"
-kotlin = "2.0.0-RC2"
-ksp = "2.0.0-RC2-1.0.20"
+agp = "8.5.0"
+kotlin = "2.0.0"
+ksp = "2.0.0-1.0.21"
 kotlinx-collection = "0.3.7"
 kotlinx-serialization-json = "1.6.3"
 core-ktx = "1.13.1"
 junit = "4.13.2"
-coroutines = "1.8.0"
+coroutines = "1.9.0-RC"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
-lifecycle-runtime-ktx = "2.7.0"
 activity-compose = "1.9.0"
-compose-bom = "2024.05.00"
-compose-no-bom = "1.7.0-alpha08"
+compose-bom = "2024.06.00"
+compose-no-bom = "1.7.0-beta03"
 compose-material3 = "1.2.1"
 navigation = "2.7.7"
-lifecycle = "2.7.0"
+lifecycle = "2.8.2"
+arrow = "1.2.4"
 hilt = "2.51.1"
 hilt-navigation-compose = "1.2.0"
 ktor = "2.3.10"
@@ -30,8 +30,6 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 androidx-benchmark-junit4 = { group = "androidx.benchmark", name = "benchmark-junit4", version.ref = "benchmark" }
-
-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 
@@ -49,7 +47,7 @@ material3 = { group = "androidx.compose.material3", name = "material3", version.
 
 # Lifecycle
 lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "lifecycle" }
-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime", version.ref = "lifecycle" }
 lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
@@ -79,6 +77,10 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+# Arrow
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
