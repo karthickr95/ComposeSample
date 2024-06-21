@@ -1,4 +1,6 @@
 pluginManagement {
+    includeBuild("gradle/build-logic")
+
     repositories {
         google()
         mavenCentral()
@@ -14,6 +16,8 @@ dependencyResolutionManagement {
     }
 }
 
+//enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 rootProject.name = "Samples"
 include(":app")
 include(":commons")
@@ -21,3 +25,4 @@ include(":navigation")
 include(":extensions")
 include(":coroutines-sample")
 include(":benchmark")
+include(":calendar-utils")

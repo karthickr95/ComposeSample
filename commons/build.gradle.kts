@@ -1,27 +1,12 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("app.samples.android.library")
     alias(libs.plugins.kotlin.compose.compiler)
 }
 
 android {
     namespace = "com.embryo.commons"
-    compileSdk = 33
-
-    defaultConfig {
-        minSdk = 29
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
     buildFeatures {
         compose = true
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 dependencies {

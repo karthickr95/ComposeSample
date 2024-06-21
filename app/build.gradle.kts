@@ -1,7 +1,6 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("app.samples.android.application")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.compose.compiler)
@@ -9,19 +8,11 @@ plugins {
 
 android {
     namespace = "com.embryo.samples"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.embryo.samples"
-        minSdk = 29
-        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
@@ -33,12 +24,7 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
     kotlinOptions {
-        jvmTarget = "1.8"
         freeCompilerArgs = listOf(
             "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
             "-Xcontext-receivers",

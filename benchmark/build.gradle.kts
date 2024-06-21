@@ -1,26 +1,12 @@
 plugins {
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.android.library)
+    id("app.samples.android.library")
     alias(libs.plugins.benchmark)
 }
 
 android {
     namespace = "com.embryo.benchmark"
-    compileSdk = 34
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 
     defaultConfig {
-        minSdk = 29
-        targetSdk = 34
-
         testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
         testInstrumentationRunnerArguments["androidx.benchmark.suppressErrors"] = "EMULATOR"
     }
