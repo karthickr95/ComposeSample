@@ -46,8 +46,11 @@ dependencies {
     implementation(project(":navigation"))
     implementation(project(":extensions"))
     implementation(project(":coroutines-sample"))
+    implementation(project(":calendar-utils"))
+    implementation(project(":permission"))
+    implementation(project(":views"))
 
-    implementation(libs.core.ktx)
+    implementation(libs.core)
     implementation(libs.lifecycle.runtime)
     implementation(libs.activity.compose)
 

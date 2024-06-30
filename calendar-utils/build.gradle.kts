@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    namespace = "app.samples.calendar.utils"
+    namespace = "app.embryo.calendar.utils"
 }
 
 dependencies {
 
-    implementation(libs.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    implementation(libs.core)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

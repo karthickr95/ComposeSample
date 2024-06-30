@@ -34,6 +34,7 @@ import com.embryo.samples.sharedtransition.SharedBoundsList
 import com.embryo.samples.sharedtransition.SharedElementTransition
 import com.embryo.samples.sharedtransition.SharedElementWithCallerManagedVisibility
 import com.embryo.samples.small_animations.SmallAnimationsScreen
+import com.embryo.views.RecyclerViewPoolActivity
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
@@ -70,6 +71,9 @@ fun SamplesNavHost(
                     },
                     startLifecycleActivity = {
                         context.startActivity(Intent(context, AActivity::class.java))
+                    },
+                    startViewsActivity = {
+                        context.startActivity(Intent(context, RecyclerViewPoolActivity::class.java))
                     }
                 )
             }

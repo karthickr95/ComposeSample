@@ -20,9 +20,12 @@ dependencyResolutionManagement {
 
 rootProject.name = "Samples"
 include(":app")
+include(":android-extensions")
 include(":commons")
 include(":navigation")
 include(":extensions")
 include(":coroutines-sample")
+include(":permission")
 include(":benchmark")
 include(":calendar-utils")
+include(":views")

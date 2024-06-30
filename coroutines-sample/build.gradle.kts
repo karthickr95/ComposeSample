@@ -16,7 +16,7 @@ dependencies {
 
     implementation(project(":commons"))
 
-    implementation(libs.core.ktx)
+    implementation(libs.core)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)

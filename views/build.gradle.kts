@@ -1,21 +1,25 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     id("app.samples.android.library")
-    alias(libs.plugins.kotlin.compose.compiler)
 }
 
 android {
-    namespace = "com.embryo.extensions"
+    namespace = "com.embryo.views"
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation(libs.core)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.foundation.layout)
+    implementation(libs.recyclerview)
+    implementation(libs.viewpager2)
+    implementation(libs.material)
 
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }

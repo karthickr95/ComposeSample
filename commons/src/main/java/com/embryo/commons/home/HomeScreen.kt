@@ -21,6 +21,7 @@ fun HomeScreen(
     onNavClick: (String) -> Unit,
     onBackClick: OnClick,
     startLifecycleActivity: (() -> Unit)? = null,
+    startViewsActivity: (() -> Unit)? = null,
     title: String,
 ) {
     SampleScaffold(
@@ -37,6 +38,18 @@ fun HomeScreen(
             val routeItemModifier = Modifier
                 .fillMaxWidth()
                 .heightIn(min = 48.dp)
+
+            startViewsActivity?.let { lambda ->
+                item(
+                    key = "views"
+                ) {
+                    RouteItem(
+                        modifier = routeItemModifier,
+                        route = "Views",
+                        onClick = lambda,
+                    )
+                }
+            }
 
             startLifecycleActivity?.let { lambda ->
                 item(
