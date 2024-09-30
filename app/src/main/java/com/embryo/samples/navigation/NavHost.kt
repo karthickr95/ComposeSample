@@ -17,6 +17,7 @@ import com.embryo.commons.home.HomeScreen
 import com.embryo.coroutines_sample.coroutinesSampleNavigationGraph
 import com.embryo.navigation.Routes
 import com.embryo.samples.R
+import com.embryo.samples.animate_bounds.AnimateBoundsSample
 import com.embryo.samples.animations.AllTrackersCard
 import com.embryo.samples.animations.BouncyRopes
 import com.embryo.samples.animations.ContainerTransform
@@ -28,6 +29,7 @@ import com.embryo.samples.animations.LookaheadWithDisappearingMovableContentDemo
 import com.embryo.samples.animations.SmoothLineGraph
 import com.embryo.samples.compose_1_6_try.compose16NavigationGraph
 import com.embryo.samples.lifecycle.AActivity
+import com.embryo.samples.pagination.PaginationSample
 import com.embryo.samples.particle.ParticleAnimationScreen
 import com.embryo.samples.sharedtransition.SharedBoundsDetail
 import com.embryo.samples.sharedtransition.SharedBoundsList
@@ -82,6 +84,11 @@ fun SamplesNavHost(
             composable(Routes.ParticleAnimation) {
                 ParticleAnimationScreen(
                     onBackClick = { navController.popBackStack() }
+                )
+            }
+            composable(Routes.Pagination) {
+                PaginationSample(
+                    onBackClick = { navController.popBackStack() },
                 )
             }
             composable(Routes.SmallAnimations) {
@@ -158,6 +165,11 @@ fun SamplesNavHost(
             }
             composable(Routes.SharedElementWithCallerManagedVisibility) {
                 SharedElementWithCallerManagedVisibility(
+                    onBackClick = { navController.popBackStack() },
+                )
+            }
+            composable(Routes.AnimateBounds) {
+                AnimateBoundsSample(
                     onBackClick = { navController.popBackStack() },
                 )
             }

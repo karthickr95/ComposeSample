@@ -25,6 +25,7 @@ fun SampleScaffold(
     verticalArrangement: Arrangement.Vertical = Arrangement.spacedBy(16.dp),
     scrollable: Boolean = false,
     backgroundColor: Color = MaterialTheme.colorScheme.background,
+    actions: @Composable RowScope.() -> Unit = {},
     content: @Composable ColumnScope.() -> Unit,
 ) {
     Scaffold(
@@ -41,9 +42,10 @@ fun SampleScaffold(
                 },
                 title = {
                     Text(text = title)
-                }
+                },
+                actions = actions,
             )
-        }
+        },
     ) { paddingValues ->
         Column(
             modifier = Modifier

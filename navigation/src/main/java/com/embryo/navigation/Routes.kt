@@ -21,12 +21,15 @@ object Routes {
     const val SharedBoundsList = "shared_hounds_list"
     const val SharedBoundsDetail = "shared_hounds_detail"
     const val SharedElementWithCallerManagedVisibility = "shared_element_caller_managed_visibility"
+    const val AnimateBounds = "animate_bounds"
+    const val Pagination = "pagination"
 
     val allRoutes: Array<String> = arrayOf(
         DemoScreen,
         Compose16Try,
         CoroutinesSamples,
         ParticleAnimation,
+        Pagination,
         SmallAnimations,
         GestureDrawer,
         SmoothLineGraph,
@@ -39,6 +42,7 @@ object Routes {
         SharedElementTransition,
         SharedBoundsList,
         SharedElementWithCallerManagedVisibility,
+        AnimateBounds,
     )
 
 }

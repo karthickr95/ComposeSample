@@ -64,6 +64,7 @@ dependencies {
 
     implementation(libs.navigation)
     implementation(libs.kotlinx.collection)
+    implementation(libs.hilt.navigation.compose)
 
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
